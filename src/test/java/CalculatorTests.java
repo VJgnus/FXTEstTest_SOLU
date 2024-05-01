@@ -22,10 +22,28 @@ class CalculatorTests
 		void add() {
 	        setNums(8, 3);
 	        model.add();
-	        assertEquals(11, getResultVal());
+	        assertEquals(11, getValue());
 	    }
-
-	private Double getResultVal()
+	@Test
+		void subtract() {
+			setNums(10,5);
+			model.subtract();
+			assertEquals(5,getValue());
+		}
+	@Test
+		void multiply() {
+			setNums(9,2);
+			model.multiply();
+			assertEquals(18,getValue());
+		}
+	@Test
+		void divide() {
+			setNums(10,5);
+			model.divide();
+			assertEquals(2,getValue());
+		}
+	
+	private Double getValue()
 	{
 		return model.getResult().getValue();
 	}
